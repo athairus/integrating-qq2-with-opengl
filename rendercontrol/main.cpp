@@ -23,14 +23,13 @@
 
 #include "renderwindow.h"
 
-int main(int argc, char **argv)
-{
-    QGuiApplication app(argc, argv);
+int main( int argc, char **argv ) {
+    QGuiApplication app( argc, argv );
 
-    Q_INIT_RESOURCE(assets);
+    Q_INIT_RESOURCE( assets );
 
     RenderWindow w;
-    w.resize(600, 600);
+    w.resize( 600, 600 );
     w.show();
 
     return app.exec();

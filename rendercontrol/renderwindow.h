@@ -19,8 +19,7 @@
 **
 ****************************************************************************/
 
-#ifndef RENDERWINDOW_H
-#define RENDERWINDOW_H
+#pragma once
 
 #include <QWindow>
 
@@ -32,36 +31,32 @@ class QQuickRenderControl;
 class QQmlComponent;
 class QQuickItem;
 
-class RenderWindow : public QWindow
-{
-public:
-    RenderWindow(QWindow *parent = 0);
-    ~RenderWindow();
+class RenderWindow : public QWindow {
+    public:
+        RenderWindow( QWindow *parent = 0 );
+        ~RenderWindow();
 
-protected:
-    void resizeEvent(QResizeEvent *e) Q_DECL_OVERRIDE;
+    protected:
+        void resizeEvent( QResizeEvent *e ) Q_DECL_OVERRIDE;
 
-    void mousePressEvent(QMouseEvent *e) Q_DECL_OVERRIDE;
-    void mouseMoveEvent(QMouseEvent *e) Q_DECL_OVERRIDE;
-    void mouseReleaseEvent(QMouseEvent *e) Q_DECL_OVERRIDE;
+        void mousePressEvent( QMouseEvent *e ) Q_DECL_OVERRIDE;
+        void mouseMoveEvent( QMouseEvent *e ) Q_DECL_OVERRIDE;
+        void mouseReleaseEvent( QMouseEvent *e ) Q_DECL_OVERRIDE;
 
-private:
-    void syncScene();
-    void draw();
+    private:
+        void syncScene();
+        void draw();
 
-    void onQmlComponentLoadingComplete();
-    void updateRootItemSize();
+        void onQmlComponentLoadingComplete();
+        void updateRootItemSize();
 
-    QOpenGLContext *m_context;
+        QOpenGLContext *m_context;
 
-    MeshRenderer *m_renderer;
-    Camera *m_camera;
+        MeshRenderer *m_renderer;
+        Camera *m_camera;
 
-    QQuickRenderControl *m_renderControl;
-    QQuickWindow *m_quickWindow;
-    QQmlComponent *m_qmlComponent;
-    QQuickItem *m_rootItem;
+        QQuickRenderControl *m_renderControl;
+        QQuickWindow *m_quickWindow;
+        QQmlComponent *m_qmlComponent;
+        QQuickItem *m_rootItem;
 };
-
-#endif // RENDERWINDOW_H
-

@@ -22,17 +22,15 @@
 import QtQuick 2.4
 
 Item {
-    id: root
+    id: root;
 
-    width: 400
-    height: 400
+    width: 400;
+    height: 400;
 
     CameraControls {
-        camera: _camera
+        camera: _camera;
 
-        anchors.bottom: root.bottom
-        anchors.horizontalCenter: root.horizontalCenter
+        anchors.bottom: root.bottom;
+        anchors.horizontalCenter: root.horizontalCenter;
     }
 }
-
-
